@@ -1,0 +1,32 @@
+﻿
+<input type="text" @bind="@message1" @bind:event="oninput" />
+<input type="button" value="Haga clic aquí" @onclick="ChangeText" />
+<div>
+    @message1
+    <br />
+    @text
+</div>
+
+
+@code
+{
+    [Parameter]
+    public string MessageParam { get; set; }
+
+    public string message1 { get; set; }
+
+    public string text { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        message1 = MessageParam;
+    }
+
+    private void ChangeText()
+    {
+        text = message1 + " oH yEA";
+        Console.WriteLine("sssss");
+
+    }
+}
