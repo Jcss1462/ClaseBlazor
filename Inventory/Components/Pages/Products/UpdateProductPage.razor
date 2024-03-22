@@ -1,0 +1,15 @@
+﻿@page "/product/update/{productId}"
+@rendermode InteractiveServer
+
+<div>
+   Actualizar Producto :)
+</div>
+
+<UpdateProductComponent productId="@productId" />
+
+@code {
+    [Parameter]
+    public string productId { get; set; }
+
+    
+}

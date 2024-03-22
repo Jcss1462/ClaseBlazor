@@ -17,6 +17,14 @@ namespace Business
             }
         }
 
+        public static ProductEntity? FindProductBtId(string productId)
+        {
+            using (var db = new InventaryContext())
+            {
+                return db.Products.Where(p => p.ProductId == productId).FirstOrDefault();
+            }
+        }
+
         public static void CreateProduct(ProductEntity oProduct)
         {
             using (var db = new InventaryContext())
